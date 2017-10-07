@@ -132,17 +132,16 @@ public class Duckling : MonoBehaviour {
 
     ///TODO: know if goal Reached and update gameState
     ///TODO: recovery from being blown away by the wind
-    ///TODO: rebounds from ducklings
 
 	void OnTriggerEnter(Collider col){
 
-		if (col.gameObject.tag == "Duck") {
+		if (col.gameObject.tag == "Duck" || col.gameObject.tag =="Chicken") {
 			Vector3 direction = this.transform.position-col.gameObject.transform.position;
 			direction = Vector3.Normalize (direction);
 
 			duckRb.AddForce (CollisionForce * direction);
 
-			Debug.Log("Chocamoooos, fuerza total: "+CollisionForce*direction);
+
 
 			col.gameObject.GetComponent<Rigidbody> ().AddForce (CollisionForce * -direction);
 

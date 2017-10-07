@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class TerrainModifiers : MonoBehaviour {
 
     public enum TypeOfTerrain { ICE,MUD,IDLE }
     public TypeOfTerrain terrainType;
 	private float modifier;
+    private bool duckOrchicken(string t,string c, string d)
+    {
+        return t == c || t == d;
+    }
 	// Use this for initialization
 	void Start () {
+
         //http://www.sc.ehu.es/sbweb/fisica/dinamica/rozamiento/general/rozamiento.htm
         switch (terrainType)
         {
@@ -32,8 +39,8 @@ public class TerrainModifiers : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-
-		if (col.gameObject.tag == "Duck") {
+        
+		if (duckOrchicken(col.tag, "Chicken", "Duck")) {
 
 			col.gameObject.GetComponent<Duckling>().ForceMod=modifier;
 			Debug.Log ("ha pasado");
@@ -41,7 +48,7 @@ public class TerrainModifiers : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider col){
-		if (col.gameObject.tag == "Duck") {
+		if (duckOrchicken(col.tag, "Chicken", "Duck")) {
 
 			col.gameObject.GetComponent<Duckling>().ForceMod=0.2f;
 			Debug.Log ("ha salido");

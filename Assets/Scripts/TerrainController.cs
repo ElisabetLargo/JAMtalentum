@@ -18,6 +18,7 @@ public class TerrainController : MonoBehaviour {
     {
         Ducks = new List<GameObject>();
         Ducks.AddRange(GameObject.FindGameObjectsWithTag("Duck"));
+        Ducks.AddRange(GameObject.FindGameObjectsWithTag("Chicken"));
     }
 
     void Update()
@@ -49,9 +50,26 @@ public class TerrainController : MonoBehaviour {
             randomMovement = true;
         }
         Debug.Log("setting random movement a " + randomMovement);
-        foreach (var d in Ducks)
+        for (int i = 0; i < Ducks.Count; i++)
         {
-            d.GetComponent<Duckling>().setRandomMovement(randomMovement);
+            if (Ducks[i])
+            {
+                Ducks[i].GetComponent<Duckling>().setRandomMovement(randomMovement);
+            }
+        }
+
+    }
+
+    public void removeDucklingFromList(GameObject Duckling)
+    {
+        for (int i = 0; i < Ducks.Count; i++)
+        {
+            if(Ducks[i]== Duckling)
+            {
+                Ducks.RemoveAt(i);
+                Destroy(Duckling);
+                break;
+            }
         }
     }
 }
