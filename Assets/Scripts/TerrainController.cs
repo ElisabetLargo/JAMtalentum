@@ -43,7 +43,7 @@ public class TerrainController : MonoBehaviour {
             yield return null;
         }
         bool randomMovement = false;
-        if (Mathf.Round(windDirection.sqrMagnitude)==0)
+        if (Mathf.Round(Wind.sqrMagnitude)==0)
         {
             Wind = Vector3.zero;
             randomMovement = true;

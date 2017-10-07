@@ -16,7 +16,7 @@ public class TerrainModifiers : MonoBehaviour {
                 modifier = 0f;
                 break;
             case TypeOfTerrain.MUD:
-                modifier = 1f;
+                modifier = 0.9f;
                 break;
             case TypeOfTerrain.IDLE:
                 modifier = 0.5f;

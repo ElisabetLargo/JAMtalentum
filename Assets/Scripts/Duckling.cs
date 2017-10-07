@@ -7,7 +7,9 @@ public class Duckling : MonoBehaviour {
     public static GameObject terrain;
 
    // [HideInInspector]
-    public float ForceMod =0.5f;
+
+    public float ForceMod =0.2f;
+	public float CollisionForce = 1000f;
 
     Vector3 duckForceMovement;
 
@@ -114,7 +116,8 @@ public class Duckling : MonoBehaviour {
 		//duckRb.AddForce ( (newDirection*DuckSpeed)/Time.deltaTime * duckRb.mass);
         duckForceMovement = (newDirection * DuckSpeed) / Time.deltaTime * duckRb.mass;
       
-        Invoke("EnableRandomMovement", 2f);
+		float aux = Random.Range (1.5f, 2.5f);
+        Invoke("EnableRandomMovement", aux);
 	}
 	public void EnableRandomMovement(){
         ///ATENCION: esto fallaba. si se para el viento, la variable se pone a false, pero si esto estaba ya llamado, se pondrá a true igualmente
@@ -124,10 +127,27 @@ public class Duckling : MonoBehaviour {
 
     public void setRandomMovement(bool r)
     {
-        isRandomMovement = true;
+        isRandomMovement = r;
     }
 
     ///TODO: know if goal Reached and update gameState
     ///TODO: recovery from being blown away by the wind
     ///TODO: rebounds from ducklings
+
+	void OnTriggerEnter(Collider col){
+
+		if (col.gameObject.tag == "Duck") {
+			Vector3 direction = this.transform.position-col.gameObject.transform.position;
+			direction = Vector3.Normalize (direction);
+
+			duckRb.AddForce (CollisionForce * direction);
+
+			Debug.Log("Chocamoooos, fuerza total: "+CollisionForce*direction);
+
+			col.gameObject.GetComponent<Rigidbody> ().AddForce (CollisionForce * -direction);
+
+
+		}
+
+	}
 }
