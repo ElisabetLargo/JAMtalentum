@@ -12,10 +12,15 @@ public class Duckling : MonoBehaviour {
     private Vector3 p,LBC;
     private float w, h;
 
+	private bool isRandomMove = true;
+
+	private Rigidbody duckRb;
+
+
     void OnDrawGizmos()
     {
         Gizmos.DrawSphere(LBC, 1);
-       // Gizmos.DrawCube(LBC, new Vector3(w, 0.1f, h));
+        Gizmos.DrawCube(LBC, new Vector3(w, 0.1f, h));
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(p,1);
 
@@ -26,12 +31,17 @@ public class Duckling : MonoBehaviour {
         {
             terrain = GameObject.FindGameObjectWithTag("Terrain");
         }
+	//	duckRb =this.transform.GetComponent<Rigidbody>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (isRandomMove) {
+			//RandomMovement ();
+		}
         controlDucklingMovement();
-        var r =this.transform.GetComponent<Rigidbody>();
+        //var r =this.transform.GetComponent<Rigidbody>();
        // r.AddForce((Vector3.right + Vector3.up) * 100);
 	}
 
@@ -42,7 +52,7 @@ public class Duckling : MonoBehaviour {
         LBC = terrain.transform.position- new Vector3(terrain.transform.localScale.x,0, terrain.transform.localScale.z) * 5;
 
         w = terrain.transform.localScale.x*10f;
-        h = terrain.transform.localScale.y*10f;
+        h = terrain.transform.localScale.z*10f;
 
 
         p = new Vector3((p.x -LBC.x)/w, p.y ,(p.z-LBC.z)/h);
@@ -58,6 +68,21 @@ public class Duckling : MonoBehaviour {
        
 
     }
+
+	/*void RandomMovement(){
+		isRandomMove = false;
+
+		int r = Random.Range (10, 350);
+		Vector3 newDirection = Quaternion.Euler (0, r, 0) *Vector3.forward;
+		duckRb.AddForce (ForceMod * newDirection);
+
+		Invoke ("EnableRandomMovement", 2f);
+	}
+	void EnableRandomMovement(){
+		isRandomMove = true;
+	}*/
+
+
     ///TODO: make random movement
     ///TODO: know if goal Reached and update gameState
     ///TODO: recovery from being blown away by the wind
