@@ -16,7 +16,7 @@ public class Duckling : MonoBehaviour {
     private Vector3 p,LBC;
     private float w, h;
     
-	public static bool isRandomMove = true;
+	private bool isRandomMove = true;
 
 	private Rigidbody duckRb;
 
@@ -86,8 +86,8 @@ public class Duckling : MonoBehaviour {
         ///F = V/t * m . Suponiendo ac=0 puesto que V es constante
 		//duckRb.AddForce ( (newDirection*DuckSpeed)/Time.deltaTime * duckRb.mass);
         duckForceMovement = (newDirection * DuckSpeed) / Time.deltaTime * duckRb.mass;
-       
-        Invoke ("EnableRandomMovement", 2f);
+        Debug.Log("setting random movement a " + isRandomMove);
+        Invoke("EnableRandomMovement", 2f);
 	}
 	public void EnableRandomMovement(){
         ///ATENCION: esto fallaba. si se para el viento, la variable se pone a false, pero si esto estaba ya llamado, se pondrá a true igualmente
@@ -95,6 +95,10 @@ public class Duckling : MonoBehaviour {
         isRandomMove = TerrainController.Wind.x ==0 && TerrainController.Wind.y ==0 && TerrainController.Wind.z==0;
 	}
 
+    public void setRandomMovement(bool r)
+    {
+        isRandomMove = true;
+    }
 
     ///TODO: know if goal Reached and update gameState
     ///TODO: recovery from being blown away by the wind

@@ -7,11 +7,18 @@ public class TerrainController : MonoBehaviour {
 
     public static Vector3 Wind; 
     private Vector3 windDirection;
-
+    private List<GameObject> Ducks;
     public float WindVelocity;
     [Range(0f,1f)]
     public float animationTime;
     public Image compass;
+
+
+    void Start()
+    {
+        Ducks = new List<GameObject>();
+        Ducks.AddRange(GameObject.FindGameObjectsWithTag("Duck"));
+    }
 
     void Update()
     {
@@ -35,15 +42,16 @@ public class TerrainController : MonoBehaviour {
             Wind = windDirection * WindVelocity;
             yield return null;
         }
+        bool randomMovement = false;
         if (Mathf.Round(windDirection.sqrMagnitude)==0)
         {
-            windDirection = Vector3.zero;
-            Duckling.isRandomMove = true;
+            Wind = Vector3.zero;
+            randomMovement = true;
         }
-        else
+        Debug.Log("setting random movement a " + randomMovement);
+        foreach (var d in Ducks)
         {
-
-            Duckling.isRandomMove = false;
+            d.GetComponent<Duckling>().setRandomMovement(randomMovement);
 
         }
     }
