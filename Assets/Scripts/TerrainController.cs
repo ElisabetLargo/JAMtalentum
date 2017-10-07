@@ -52,7 +52,6 @@ public class TerrainController : MonoBehaviour {
         foreach (var d in Ducks)
         {
             d.GetComponent<Duckling>().setRandomMovement(randomMovement);
-
         }
     }
 }

@@ -36,14 +36,16 @@ public class TerrainModifiers : MonoBehaviour {
 		if (col.gameObject.tag == "Duck") {
 
 			col.gameObject.GetComponent<Duckling>().ForceMod=modifier;
+			Debug.Log ("ha pasado");
 		}
 	}
-    void OnTriggerExit(Collider col)
-    {
-        if (col.gameObject.tag == "Duck")
-        {
-            col.gameObject.GetComponent<Duckling>().ForceMod = 0.2f;
-            //col.gameObject.GetComponent<Duckling>().=modifier;
-        }
-    }
+
+	void OnTriggerExit(Collider col){
+		if (col.gameObject.tag == "Duck") {
+
+			col.gameObject.GetComponent<Duckling>().ForceMod=0.2f;
+			Debug.Log ("ha salido");
+		}
+	}
+		
 }
