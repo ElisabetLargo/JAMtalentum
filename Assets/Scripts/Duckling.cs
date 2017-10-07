@@ -6,14 +6,17 @@ public class Duckling : MonoBehaviour {
 
     public static GameObject terrain;
 
+    //[HideInInspector]
+    public float ForceMod =0.2f;
 
-    public float ForceMod;
+    Vector3 duckForceMovement;
+
 	public float DuckSpeed=50;
     
     private Vector3 p,LBC;
     private float w, h;
     
-	public static bool isRandomMove = false;
+	public static bool isRandomMove = true;
 
 	private Rigidbody duckRb;
 
@@ -38,12 +41,14 @@ public class Duckling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Debug.Log(isRandomMove);
 		if (isRandomMove) {
 			RandomMovement ();
 		}
         controlDucklingMovement();
-        //var r =this.transform.GetComponent<Rigidbody>();
-        duckRb.AddForce(TerrainController.Wind, ForceMode.Acceleration);
+        //Sumatorio de fuerzas El viento + el movimiento + el rozamiento del suelo si lo hay
+        duckRb.AddForce(TerrainController.Wind + duckForceMovement - (duckForceMovement * (1f-ForceMod)) ,ForceMode.Force);
+        duckForceMovement = Vector3.zero;
 	}
 
     void controlDucklingMovement()
@@ -72,12 +77,14 @@ public class Duckling : MonoBehaviour {
 
 	void RandomMovement(){
 		isRandomMove = false;
-
+        Debug.Log("moving");
 		int r = Random.Range (10, 350);
 		Vector3 newDirection = Quaternion.Euler (0, r, 0) *Vector3.forward;
-		duckRb.AddForce (ForceMod * newDirection*DuckSpeed);
+        ///F = V/t * m . Suponiendo ac=0 puesto que V es constante
+		//duckRb.AddForce ( (newDirection*DuckSpeed)/Time.deltaTime * duckRb.mass);
+        duckForceMovement = (newDirection * DuckSpeed) / Time.deltaTime * duckRb.mass;
 
-		Invoke ("EnableRandomMovement", 2f);
+        Invoke ("EnableRandomMovement", 2f);
 	}
 	void EnableRandomMovement(){
 		isRandomMove = true;
