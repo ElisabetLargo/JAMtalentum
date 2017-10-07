@@ -7,8 +7,8 @@ public class TerrainController : MonoBehaviour {
 
     public static Vector3 Wind; 
     private Vector3 windDirection;
-    private Vector3 currentWindDirection;
-    public float windforce;
+
+    public float WindVelocity;
     [Range(0f,1f)]
     public float animationTime;
     public Image compass;
@@ -32,17 +32,19 @@ public class TerrainController : MonoBehaviour {
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
         {
             windDirection = Vector3.Lerp(cWD, cWD + newWindDirection, t);
-            Wind = windDirection * windforce;
+            Wind = windDirection * WindVelocity;
             yield return null;
         }
-        if (windDirection.sqrMagnitude.Equals(0f))
+        if (Mathf.Round(windDirection.sqrMagnitude)==0)
         {
-            Duckling.isRandomMove = true;
+            windDirection = Vector3.zero;
+			Duckling.isRandomMovement = true;
         }
         else
         {
 
-            Duckling.isRandomMove = false;
+			Duckling.isRandomMovement = false;
+
         }
     }
 }
