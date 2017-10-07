@@ -68,6 +68,7 @@ Shader "Cg shader for toon shading" {
 	float4 frag(vertexOutput input) : COLOR
 	{
 		float3 normalDirection = normalize(input.normalDir);
+		float r = rand(input.normalDir);
 
 		float3 viewDirection = normalize(
 			_WorldSpaceCameraPos - input.posWorld.xyz);
@@ -101,12 +102,12 @@ Shader "Cg shader for toon shading" {
 
 		// higher priority: outline
 		if (dot(viewDirection, normalDirection)
-			< lerp(_UnlitOutlineThickness, _LitOutlineThickness,
+			< lerp(_UnlitOutlineThickness*(1-r), _LitOutlineThickness*r,
 				max(0.0, dot(normalDirection, lightDirection))))
 		{
-			float r = rand(input.posWorld);
-			float3 color = _LightColor0.rgb*(1 - r) + _OutlineColor.rgb*r;
-			fragmentColor = _LightColor0.rgb * color;
+			
+			//float3 color = _LightColor0.rgb*(1 - r) + _OutlineColor.rgb*r;
+			fragmentColor = _LightColor0.rgb *_OutlineColor.rgb;
 		}
 
 		// highest priority: highlights
