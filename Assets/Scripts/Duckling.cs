@@ -8,11 +8,15 @@ public class Duckling : MonoBehaviour {
 
     public float ForceMod;
 	public float DuckSpeed=50;
+ 
+	float maxTimeChangeDirection=2f;
+	float ellapsedTime;
     
     private Vector3 p,LBC;
+	private Vector3 direction;
     private float w, h;
 
-	private bool isRandomMove = true;
+	private bool isRandomMovement = true;
 
 	private Rigidbody duckRb;
 
@@ -32,13 +36,19 @@ public class Duckling : MonoBehaviour {
             terrain = GameObject.FindGameObjectWithTag("Terrain");
         }
 		duckRb =this.transform.GetComponent<Rigidbody>();
-
+		direction = this.transform.forward;
+		ellapsedTime = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (isRandomMove) {
-			RandomMovement ();
+		if (isRandomMovement) {
+			Move ();
+
+			if (Time.time - ellapsedTime >= maxTimeChangeDirection) {
+				ellapsedTime = Time.time;
+				GetRandomMovement ();
+			}
 		}
         controlDucklingMovement();
         //var r =this.transform.GetComponent<Rigidbody>();
@@ -68,19 +78,19 @@ public class Duckling : MonoBehaviour {
        
 
     }
-
-	void RandomMovement(){
-		isRandomMove = false;
+	void Move(){		
+		//this.transform.position=new Vector3(this.transform.position+DuckSpeed*direction*ForceMod*Time.deltaTime);
+		this.transform.Translate(DuckSpeed*direction*ForceMod*Time.deltaTime);
+	}
+	void GetRandomMovement(){
 
 		int r = Random.Range (10, 350);
-		Vector3 newDirection = Quaternion.Euler (0, r, 0) *Vector3.forward;
-		duckRb.AddForce (ForceMod * newDirection*DuckSpeed);
+		Debug.Log ("random angle: " + r);
+		direction = Quaternion.Euler (0, r, 0) *Vector3.forward;
+		//duckRb.AddForce (ForceMod * newDirection*DuckSpeed);
+		this.transform.Rotate(direction);
+	}
 
-		Invoke ("EnableRandomMovement", 2f);
-	}
-	void EnableRandomMovement(){
-		isRandomMove = true;
-	}
 
 
     ///TODO: make random movement
