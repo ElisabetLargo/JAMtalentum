@@ -6,6 +6,7 @@ public class Duckling : MonoBehaviour {
 
     public static GameObject terrain;
 
+
     public float ForceMod;
 	public float DuckSpeed=50;
  
@@ -17,6 +18,7 @@ public class Duckling : MonoBehaviour {
     private float w, h;
 
 	private bool isRandomMovement = true;
+
 
 	private Rigidbody duckRb;
 
@@ -52,7 +54,7 @@ public class Duckling : MonoBehaviour {
 		}
         controlDucklingMovement();
         //var r =this.transform.GetComponent<Rigidbody>();
-       // r.AddForce((Vector3.right + Vector3.up) * 100);
+        duckRb.AddForce(TerrainController.Wind, ForceMode.Acceleration);
 	}
 
     void controlDucklingMovement()
