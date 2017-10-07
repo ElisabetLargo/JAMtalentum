@@ -13,13 +13,13 @@ public class TerrainModifiers : MonoBehaviour {
         switch (terrainType)
         {
             case TypeOfTerrain.ICE:
-                modifier = 0.98f;
+                modifier = 0f;
                 break;
             case TypeOfTerrain.MUD:
-                modifier = 0.1f;
+                modifier = 1f;
                 break;
             case TypeOfTerrain.IDLE:
-                modifier = 0.9f;
+                modifier = 0.5f;
                 break;
             default:
                 break;

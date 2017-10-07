@@ -7,7 +7,7 @@ public class Duckling : MonoBehaviour {
     public static GameObject terrain;
 
    // [HideInInspector]
-    public float ForceMod =0.2f;
+    public float ForceMod =0.5f;
 
     Vector3 duckForceMovement;
 
