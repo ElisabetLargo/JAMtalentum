@@ -18,13 +18,10 @@ public class TerrainController : MonoBehaviour {
         var rt = compass.GetComponent<RectTransform>();
         var a = Mathf.Rad2Deg * Mathf.Atan2(Wind.z, Wind.x);
         rt.rotation = Quaternion.Euler(Vector3.forward * a);
+        Debug.DrawLine(this.transform.position, this.transform.position + Wind, Color.cyan);
     }
 	public void changeWindDirection(Vector3 newWindDirection)
     {
-        /*  windDirection += newWindDirection;
-          windDirection.Normalize();
-          Debug.Log("new wind direction is " + windDirection);
-          Wind = windDirection * windforce;*/
         StartCoroutine(changewindDirectionCoroutine(0.5f, newWindDirection));
       
     }
