@@ -37,12 +37,14 @@ public class TerrainController : MonoBehaviour {
         }
         if (Mathf.Round(windDirection.sqrMagnitude)==0)
         {
+            windDirection = Vector3.zero;
             Duckling.isRandomMove = true;
         }
         else
         {
 
             Duckling.isRandomMove = false;
+
         }
     }
 }

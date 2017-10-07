@@ -6,7 +6,7 @@ public class Duckling : MonoBehaviour {
 
     public static GameObject terrain;
 
-    //[HideInInspector]
+    [HideInInspector]
     public float ForceMod =0.2f;
 
     Vector3 duckForceMovement;
@@ -47,7 +47,10 @@ public class Duckling : MonoBehaviour {
 		}
         controlDucklingMovement();
         //Sumatorio de fuerzas El viento + el movimiento + el rozamiento del suelo si lo hay
-        duckRb.AddForce(TerrainController.Wind + duckForceMovement - (duckForceMovement * (1f-ForceMod)) ,ForceMode.Force);
+        //aqui asumimos que cuando existe la totalidad del rozamiento, el bicho no se mueve
+        //por lo tanto al final se reduce a un modificador de [0-1], que nunca será uno sobre la velocidad que lleva.
+        //no es correcto fisicamente del todo.
+        duckRb.AddForce(TerrainController.Wind + (duckForceMovement * (1f-ForceMod)) ,ForceMode.Force);
         duckForceMovement = Vector3.zero;
 	}
 
@@ -83,15 +86,16 @@ public class Duckling : MonoBehaviour {
         ///F = V/t * m . Suponiendo ac=0 puesto que V es constante
 		//duckRb.AddForce ( (newDirection*DuckSpeed)/Time.deltaTime * duckRb.mass);
         duckForceMovement = (newDirection * DuckSpeed) / Time.deltaTime * duckRb.mass;
-
+       
         Invoke ("EnableRandomMovement", 2f);
 	}
-	void EnableRandomMovement(){
-		isRandomMove = true;
+	public void EnableRandomMovement(){
+        ///ATENCION: esto fallaba. si se para el viento, la variable se pone a false, pero si esto estaba ya llamado, se pondrá a true igualmente
+        
+        isRandomMove = TerrainController.Wind.x ==0 && TerrainController.Wind.y ==0 && TerrainController.Wind.z==0;
 	}
 
 
-    ///TODO: make random movement
     ///TODO: know if goal Reached and update gameState
     ///TODO: recovery from being blown away by the wind
     ///TODO: rebounds from ducklings

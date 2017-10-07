@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e730181e47a537478f275aba8b3d27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceMod: 0.8
+  ForceMod: 0.1
   DuckSpeed: 4
 --- !u!23 &1074255343
 MeshRenderer:
