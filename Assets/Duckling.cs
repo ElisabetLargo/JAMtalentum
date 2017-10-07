@@ -6,6 +6,7 @@ public class Duckling : MonoBehaviour {
 
     public static GameObject terrain;
 
+
     public float ForceMod;
     
     private Vector3 p,LBC;
