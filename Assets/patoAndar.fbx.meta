@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 376a0c89af366f84e8e05c3a8deb3aa9
+timeCreated: 1507426150
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: alaDer0
+    100002: alaDer1
+    100004: alaDer2
+    100006: alaDer2_end
+    100008: alaDerecha
+    100010: alaIzq0
+    100012: alaIzq1
+    100014: alaIzq2
+    100016: alaIzq2_end
+    100018: alaIzquierda
+    100020: Armature
+    100022: bigote
+    100024: cabeza0
+    100026: cabeza1
+    100028: cabeza1_end
+    100030: cascoBase
+    100032: cascoDetalles
+    100034: cola
+    100036: cola_end
+    100038: columna0
+    100040: columna1
+    100042: columna2
+    100044: columna3
+    100046: cuerpo
+    100048: ojoDerecho
+    100050: ojoIzquierdo
+    100052: pataDer0
+    100054: pataDer1
+    100056: pataDer2
+    100058: pataDer2_end
+    100060: pataDerecha
+    100062: pataIzq0
+    100064: pataIzq1
+    100066: pataIzq2
+    100068: pataIzq2_end
+    100070: pataIzquierda
+    100072: //RootNode
+    100074: pico
+    100076: Sun
+    400000: alaDer0
+    400002: alaDer1
+    400004: alaDer2
+    400006: alaDer2_end
+    400008: alaDerecha
+    400010: alaIzq0
+    400012: alaIzq1
+    400014: alaIzq2
+    400016: alaIzq2_end
+    400018: alaIzquierda
+    400020: Armature
+    400022: bigote
+    400024: cabeza0
+    400026: cabeza1
+    400028: cabeza1_end
+    400030: cascoBase
+    400032: cascoDetalles
+    400034: cola
+    400036: cola_end
+    400038: columna0
+    400040: columna1
+    400042: columna2
+    400044: columna3
+    400046: cuerpo
+    400048: ojoDerecho
+    400050: ojoIzquierdo
+    400052: pataDer0
+    400054: pataDer1
+    400056: pataDer2
+    400058: pataDer2_end
+    400060: pataDerecha
+    400062: pataIzq0
+    400064: pataIzq1
+    400066: pataIzq2
+    400068: pataIzq2_end
+    400070: pataIzquierda
+    400072: //RootNode
+    400074: pico
+    400076: Sun
+    4300000: ojoDerecho
+    4300002: ojoIzquierdo
+    4300004: alaDerecha
+    4300006: pataDerecha
+    4300008: pataIzquierda
+    4300010: alaIzquierda
+    4300012: cascoDetalles
+    4300014: cascoBase
+    4300016: pico
+    4300018: bigote
+    4300020: cuerpo
+    7400000: Sun|SunAction
+    7400002: Armature|ArmatureAction
+    7400004: Armature|SunAction
+    9500000: //RootNode
+    13700000: alaDerecha
+    13700002: alaIzquierda
+    13700004: bigote
+    13700006: cascoBase
+    13700008: cascoDetalles
+    13700010: cuerpo
+    13700012: ojoDerecho
+    13700014: ojoIzquierdo
+    13700016: pataDerecha
+    13700018: pataIzquierda
+    13700020: pico
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
