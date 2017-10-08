@@ -11,7 +11,10 @@ public class ScoreManager : MonoBehaviour {
     public Gradient color;
     public void UpdateTime(float time)
     {
-        Time.text = time.ToString();
+        int mins = (int)time / 60;
+        int secs = (int)((time/60f - mins) *60);
+        Time.text = mins + "m" + secs + "s";
+       // Time.text = time.ToString();
     }
 
     /// <summary>
@@ -25,18 +28,13 @@ public class ScoreManager : MonoBehaviour {
         Text t;
         StringBuilder s = new StringBuilder();
         string bird;
-        if (ducks) {
-            t = DucksSaved;
-            bird = "Ducks   ";  
-            s.Append(bird,0,bird.Length);
-            //DucksSaved.text = "Ducks:   " + birdsSaved + "/" + birdsTotal;
+        if (ducks)
+        {
+            t = DucksSaved; 
         }
         else
         {
             t = ChickensSaved;
-            bird = "Chickens    ";
-            s.Append(bird, 0, bird.Length);
-            //ChickensSaved.text = "Chickens: " + birdsSaved + "/" + birdsTotal;
         }
 
         s.Append(birdsSaved + "/" + birdsTotal);

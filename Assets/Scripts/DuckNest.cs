@@ -10,7 +10,7 @@ public class DuckNest : Nest {
     }
     public void OnTriggerEnter(Collider other)
     {
-
+        Debug.Log(other.tag);
         if(other.tag == "Duck")
         {
             gc.rescueDuck();

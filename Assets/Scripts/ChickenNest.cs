@@ -13,6 +13,7 @@ public class ChickenNest : Nest {
         Debug.Log("Entra en Chicken");
         if (other.tag == "Duck")
         {
+            Debug.Log("es duck");
             gc.failedRescue();
             base.OnTriggerEnter(other);
         }
