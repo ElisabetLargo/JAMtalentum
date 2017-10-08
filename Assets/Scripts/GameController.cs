@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-    private float rescuedDucks, rescuedChickens,failedRescues, currentTime;
-    public  float TotalTime, TotalChickens, TotalDucks;
-	// Use this for initialization
-	void Start () {
-	}
-	
+    private int rescuedDucks, rescuedChickens, failedRescues;
+    private float currentTime;
+    public int TotalTime, TotalChickens, TotalDucks;
+    public ScoreManager sManager;
+
 	// Update is called once per frame
 	void Update () {
         currentTime += Time.deltaTime;
+        sManager.UpdateTime(TotalTime - currentTime);
         if (currentTime>=TotalTime )
         {
             gameOver(false);
@@ -34,11 +34,13 @@ public class GameController : MonoBehaviour {
     public void rescueDuck()
     {
         rescuedDucks++;
+        sManager.updatebirds(ref rescuedDucks, ref TotalDucks, true);
     }
 
     public void rescueChicken()
     {
         rescuedChickens++;
+        sManager.updatebirds(ref rescuedChickens, ref TotalChickens, false);
     }
     public void failedRescue()
     {
@@ -51,7 +53,7 @@ public class GameController : MonoBehaviour {
         }
         else
         {
-
+            Debug.Log("perdiste");
         }
 
     }
