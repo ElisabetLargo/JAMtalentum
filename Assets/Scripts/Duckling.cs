@@ -65,6 +65,8 @@ public class Duckling : MonoBehaviour {
         if (TerrainController.Wind == Vector3.zero) ducklingAnimator.SetFloat("AnimationSpeedMultiplier", a);
         else
         {
+
+            duckRb.AddTorque(TerrainController.Wind, ForceMode.Force);
             //Activar el ragdoll
         }
 
