@@ -10,23 +10,22 @@ public class Duckling : MonoBehaviour {
 
     public float ForceMod =0.2f;
 	public float CollisionForce = 1000f;
-
-    Vector3 duckForceMovement;
-
 	public float DuckSpeed=50;
+    float duckRotationspeed;
  
-	float maxTimeChangeDirection=2f;
-	float ellapsedTime;
+
     
     private Vector3 p,LBC;
 	private Vector3 direction;
-    private float w, h;
+    private Vector3 duckForceMovement,auxForce;
+
+    private float w, h, randomMovementTime;
 
 	private bool isRandomMovement = true;
 
 
 	private Rigidbody duckRb;
-
+    public Animator ducklingAnimator;
 
     void OnDrawGizmos()
     {
@@ -44,24 +43,24 @@ public class Duckling : MonoBehaviour {
         }
 		duckRb =this.transform.GetComponent<Rigidbody>();
 		direction = this.transform.forward;
-		ellapsedTime = Time.time;
+        ducklingAnimator = this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (isRandomMovement) {
-			//Move ();
 			RandomMovement();
-			/*if (Time.time - ellapsedTime >= maxTimeChangeDirection) {
-				ellapsedTime = Time.time;
-				GetRandomMovement ();
-			}*/
+
 		}
         //Sumatorio de fuerzas El viento + el movimiento + el rozamiento del suelo si lo hay
         //aqui asumimos que cuando existe la totalidad del rozamiento, el bicho no se mueve
         //por lo tanto al final se reduce a un modificador de [0-1], que nunca será uno sobre la velocidad que lleva.
         //no es correcto fisicamente del todo.
 		duckRb.AddForce((TerrainController.Wind + duckForceMovement )* (1f-ForceMod) ,ForceMode.Force);
+        Debug.Log(duckRb.velocity.magnitude);
+        if(TerrainController.Wind == Vector3.zero) ducklingAnimator.speed = duckRb.velocity.magnitude/2;
+        
+        
         duckForceMovement = Vector3.zero;
 		controlDucklingMovement();
 
@@ -99,8 +98,9 @@ public class Duckling : MonoBehaviour {
 		int r = Random.Range (10, 350);
 		Debug.Log ("random angle: " + r);
 		direction = Quaternion.Euler (0, r, 0) *Vector3.forward;
+
 		//duckRb.AddForce (ForceMod * newDirection*DuckSpeed);
-		this.transform.Rotate(direction);
+		
 	}
 
 
@@ -112,12 +112,13 @@ public class Duckling : MonoBehaviour {
        // Debug.Log("moving");
 		int r = Random.Range (10, 350);
 		Vector3 newDirection = Quaternion.Euler (0, r, 0) *Vector3.forward;
+       
         ///F = V/t * m . Suponiendo ac=0 puesto que V es constante
-		//duckRb.AddForce ( (newDirection*DuckSpeed)/Time.deltaTime * duckRb.mass);
         duckForceMovement = (newDirection * DuckSpeed) / Time.deltaTime * duckRb.mass;
-      
-		float aux = Random.Range (1.5f, 2.5f);
-        Invoke("EnableRandomMovement", aux);
+        auxForce = duckForceMovement;
+        this.transform.LookAt(this.transform.position + duckForceMovement.normalized);
+        randomMovementTime = Random.Range (1.5f, 2.5f);
+        Invoke("EnableRandomMovement", randomMovementTime);
 	}
 	public void EnableRandomMovement(){
         ///ATENCION: esto fallaba. si se para el viento, la variable se pone a false, pero si esto estaba ya llamado, se pondrá a true igualmente
@@ -140,8 +141,6 @@ public class Duckling : MonoBehaviour {
 			direction = Vector3.Normalize (direction);
 
 			duckRb.AddForce (CollisionForce * direction);
-
-
 
 			col.gameObject.GetComponent<Rigidbody> ().AddForce (CollisionForce * -direction);
 
