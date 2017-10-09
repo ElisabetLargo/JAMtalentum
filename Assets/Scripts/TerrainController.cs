@@ -23,9 +23,9 @@ public class TerrainController : MonoBehaviour {
 
     void Update()
     {
-        var rt = compass.GetComponent<RectTransform>();
+      //  var rt = compass.GetComponent<RectTransform>();
         var a = Mathf.Rad2Deg * Mathf.Atan2(Wind.z, Wind.x);
-        rt.rotation = Quaternion.Euler(Vector3.forward * a);
+        //rt.rotation = Quaternion.Euler(Vector3.forward * a);
         Debug.DrawLine(this.transform.position, this.transform.position + Wind, Color.cyan);
     }
 	public void changeWindDirection(Vector3 newWindDirection)
