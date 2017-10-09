@@ -7,6 +7,7 @@ TagManager:
   - Terrain
   - Duck
   - Chicken
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -11,14 +11,14 @@ public class TutorialController : MonoBehaviour {
 	public string[] phrases;
 	public string[] waitingPhrases;
 
-	public Sprite[] faces;
+	public GameObject[] talkers;
 
-	public GameObject talker;
 	public GameObject textBox;
 	public GameObject compass;
 
 	private int index=0;
 	private int waitingIndex=0;
+	private int lastWaiter=0;
 
 	private Image img;
 	private bool end=false;
@@ -36,7 +36,11 @@ public class TutorialController : MonoBehaviour {
 	void changePhrase(){
 		
 		textBox.GetComponentInChildren<Text> ().text = phrases [index];
-		talker.GetComponent<Image> ().sprite = faces [index];
+
+		if (index != 0) {
+			talkers[index-1].SetActive(false);
+		}
+		talkers[index].SetActive(true);
 		index++;
 
 		if (index == phrases.Length) {
@@ -52,7 +56,9 @@ public class TutorialController : MonoBehaviour {
 	void FirstApparition(){
 
 		textBox.SetActive (true);
-		talker.SetActive (true);
+		talkers[index].SetActive(true);
+
+		//talker.SetActive (true);
 
 		Invoke ("changePhrase", 0.5f);
 
@@ -61,16 +67,25 @@ public class TutorialController : MonoBehaviour {
 	void EnableCompass(){
 		compass.SetActive (true);
 		textBox.SetActive (false);
+		talkers[index-1].SetActive(false);
+
 		Invoke ("Waiting", 5f);
 		//Spawn pollito y gallinita
+
+	}
+	void DisableTalker(){
+		talkers[index].SetActive(false);
 
 	}
 
 	void Waiting(){
 		textBox.SetActive (true);
+		talkers[waitingIndex].SetActive(true);
+
 
 		if (!end) {
 			textBox.GetComponentInChildren<Text> ().text = waitingPhrases [waitingIndex];
+			lastWaiter = waitingIndex;
 			waitingIndex++;
 			if (waitingIndex >= waitingPhrases.Length)
 				waitingIndex = 0;
@@ -82,6 +97,9 @@ public class TutorialController : MonoBehaviour {
 
 	void DisableBox(){		
 		textBox.SetActive (false);
+
+		talkers[lastWaiter].SetActive(false);
+
 		Invoke ("Waiting", 3f);
 
 	}

@@ -24,6 +24,10 @@ public class ChickenNest : Nest {
             base.OnTriggerEnter(other);
 
         }
+		else if(other.tag=="DuckTutorial"){
+
+			GameObject.FindGameObjectWithTag("Canvas").GetComponent<TutorialController>().Win();
+		}
         
     }
 }
