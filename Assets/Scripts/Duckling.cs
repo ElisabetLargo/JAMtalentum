@@ -7,7 +7,7 @@ public class Duckling : MonoBehaviour {
     public static GameObject terrain;
 
    // [HideInInspector]
-
+	public Rigidbody centro;
     public float ForceMod =0.2f;
 	public float CollisionForce = 1000f;
 	public float DuckSpeed=50;
@@ -43,7 +43,7 @@ public class Duckling : MonoBehaviour {
         {
             terrain = GameObject.FindGameObjectWithTag("Terrain");
         }
-		duckRb =this.transform.GetComponent<Rigidbody>();
+		duckRb = centro;
 		direction = this.transform.forward;
         ducklingAnimator = this.GetComponent<Animator>();
 	}
@@ -125,7 +125,7 @@ public class Duckling : MonoBehaviour {
 		Vector3 newDirection = Quaternion.Euler (0, r, 0) *Vector3.forward;
        
         ///F = V/t * m . Suponiendo ac=0 puesto que V es constante
-        duckForceMovement = (newDirection * DuckSpeed) / Time.deltaTime * duckRb.mass;
+        duckForceMovement = (newDirection * DuckSpeed) / Time.deltaTime * 10;
         auxForce = duckForceMovement;
         this.transform.LookAt(this.transform.position + duckForceMovement.normalized);
         randomMovementTime = Random.Range (1.5f, 2.5f);
