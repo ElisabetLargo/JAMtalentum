@@ -200,7 +200,7 @@ public class RagdollHelper : MonoBehaviour {
 					if (b.transform==anim.GetBoneTransform(HumanBodyBones.Hips))
 						b.transform.position=Vector3.Lerp(b.transform.position, b.storedPosition, ragdollBlendAmount);
 					//rotation is interpolated for all body parts
-					b.transform.rotation=Quaternion.Slerp(b.transform.rotation, b.storedRotation, ragdollBlendAmount);
+					b.transform.rotation=Quaternion.Slerp(b.transform.rotation, Quaternion.Euler(0,0,0), ragdollBlendAmount);
 				}
 			}
 			

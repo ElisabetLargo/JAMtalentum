@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TerrainModifiers : MonoBehaviour {
 
-    public enum TypeOfTerrain { ICE,MUD,IDLE }
+    public enum TypeOfTerrain { ICE,MUD,IDLE,FLOWERS }
     public TypeOfTerrain terrainType;
 	private float modifier;
     private bool duckOrchicken(string t,string c, string d)
@@ -25,6 +25,9 @@ public class TerrainModifiers : MonoBehaviour {
             case TypeOfTerrain.MUD:
                 modifier = 0.9f;
                 break;
+			case TypeOfTerrain.FLOWERS:
+				modifier = 0.7f;
+				break;
             case TypeOfTerrain.IDLE:
                 modifier = 0.5f;
                 break;

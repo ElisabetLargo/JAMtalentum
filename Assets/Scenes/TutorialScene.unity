@@ -766,6 +766,25 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1378631286440158, guid: fb56feda18956f746bf9d991f79137b0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224830601583076892, guid: fb56feda18956f746bf9d991f79137b0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -253.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 224854175545576106, guid: fb56feda18956f746bf9d991f79137b0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 135.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224939577037474068, guid: fb56feda18956f746bf9d991f79137b0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 135.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb56feda18956f746bf9d991f79137b0, type: 2}
   m_IsPrefabParent: 0
@@ -1341,7 +1360,7 @@ Canvas:
   m_GameObject: {fileID: 1282061013}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1108295062}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1859,7 +1878,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092953795}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -1913,7 +1932,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092953795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -32.43, z: -4.1}
+  m_LocalPosition: {x: 0.2, y: -26.1, z: -6}
   m_LocalScale: {x: 4.410341, y: 2.6720324, z: 2.6720324}
   m_Children: []
   m_Father: {fileID: 0}
