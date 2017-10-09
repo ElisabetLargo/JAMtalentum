@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class spawnDucks : MonoBehaviour {
-	public GameObject duck;
+	public GameObject[] duckschickens;
 	public float spawnTime;
-	public int force;
+	public int forceRight;
+	public int forceUP;
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("launch", 2, spawnTime);
+
+		InvokeRepeating ("launchDuck", 2, spawnTime);
+
+		InvokeRepeating ("launchChiken", 2, 2.08f);
+
 	}
 	
 	// Update is called once per frame
@@ -16,15 +21,17 @@ public class spawnDucks : MonoBehaviour {
 
 	}
 
-	void launch(){
-		var projectile = Instantiate(duck,
+	void launchDuck(){
+		var projectile1 = Instantiate(duckschickens[Random.Range(0,duckschickens.Length)] ,
 			transform.position,
 			transform.rotation);
-		projectile.GetComponent<Rigidbody>().AddForce (transform.up * (force + Random.Range(1f,10f)));
-		projectile.GetComponent<Rigidbody>().AddForce (transform.right * (force+ Random.Range(1f,10f)));
+		projectile1.GetComponent<Rigidbody>().AddForce (transform.up * (forceUP + Random.Range(1f,10f)));
+		projectile1.GetComponent<Rigidbody>().AddForce (transform.right * (forceRight + Random.Range(1f,10f)));
 
-		Destroy (projectile, 5);
+		Destroy (projectile1, 10);
 	}
+
+
 
 
 }

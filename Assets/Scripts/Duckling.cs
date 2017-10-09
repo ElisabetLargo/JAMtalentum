@@ -43,6 +43,7 @@ public class Duckling : MonoBehaviour {
         {
             terrain = GameObject.FindGameObjectWithTag("Terrain");
         }
+
 		duckRb = centro;
 		direction = this.transform.forward;
         ducklingAnimator = this.GetComponent<Animator>();
@@ -58,17 +59,21 @@ public class Duckling : MonoBehaviour {
         //aqui asumimos que cuando existe la totalidad del rozamiento, el bicho no se mueve
         //por lo tanto al final se reduce a un modificador de [0-1], que nunca será uno sobre la velocidad que lleva.
         //no es correcto fisicamente del todo.
+
 		duckRb.AddForce((TerrainController.Wind + duckForceMovement )* (1f-ForceMod) ,ForceMode.Force);
 
         float speed = duckRb.velocity.magnitude / DuckSpeed * animMultiplyier;
         if (TerrainController.Wind == Vector3.zero)
         {
+			
+		
+
             ducklingAnimator.SetFloat("AnimationSpeedMultiplier", speed);
             
         }
         else
         {
-            //Activar el ragdoll
+
         }
 
 

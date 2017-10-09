@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 54875471806663188}
   - component: {fileID: 114276502731632870}
   m_Layer: 0
-  m_Name: Duck+Ragdoll
+  m_Name: Duck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1382,6 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e730181e47a537478f275aba8b3d27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centro: {fileID: 0}
   ForceMod: 0.2
   CollisionForce: 1000
   DuckSpeed: 20
