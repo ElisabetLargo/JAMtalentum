@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 
 public class TutorialController : MonoBehaviour {
@@ -32,9 +34,6 @@ public class TutorialController : MonoBehaviour {
 	}
 
 	void changePhrase(){
-		Debug.Log ("cambio a frase " + index);
-
-
 		
 		textBox.GetComponentInChildren<Text> ().text = phrases [index];
 		talker.GetComponent<Image> ().sprite = faces [index];
@@ -51,7 +50,7 @@ public class TutorialController : MonoBehaviour {
 	}
 
 	void FirstApparition(){
-		Debug.Log ("activando todo");
+
 		textBox.SetActive (true);
 		talker.SetActive (true);
 
@@ -62,9 +61,11 @@ public class TutorialController : MonoBehaviour {
 	void EnableCompass(){
 		compass.SetActive (true);
 		textBox.SetActive (false);
-		Invoke ("Waiting", 2f);
+		Invoke ("Waiting", 5f);
+		//Spawn pollito y gallinita
 
 	}
+
 	void Waiting(){
 		textBox.SetActive (true);
 
@@ -73,9 +74,31 @@ public class TutorialController : MonoBehaviour {
 			waitingIndex++;
 			if (waitingIndex >= waitingPhrases.Length)
 				waitingIndex = 0;
-			Invoke ("Waiting", 5f);
+			Invoke ("DisableBox", 3f);
 
 		}
 
+	}
+
+	void DisableBox(){		
+		textBox.SetActive (false);
+		Invoke ("Waiting", 3f);
+
+	}
+
+	public void Back(){
+		SceneManager.LoadScene (0);
+	}
+
+
+	public void Win(){
+		textBox.SetActive (true);
+		textBox.GetComponentInChildren<Text> ().text = "GREAT! You can start now!";
+
+	
+	}
+
+	private void StartGame(){
+		SceneManager.LoadScene (1);
 	}
 }
