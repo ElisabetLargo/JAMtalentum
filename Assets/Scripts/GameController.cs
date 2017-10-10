@@ -27,7 +27,11 @@ public class GameController : MonoBehaviour {
 	void Start(){
 		/*rescuedChickens = rescuedDucks = 6;
 		failedRescues = 0;
-		TotalDucks = TotalChickens=6;*/
+		*/
+		//TotalDucks = TotalChickens=6;
+
+		sManager.updatebirds(ref rescuedChickens, ref TotalChickens, false);
+		sManager.updatebirds(ref rescuedDucks, ref TotalDucks, true);
 	}
 
 

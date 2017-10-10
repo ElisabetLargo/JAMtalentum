@@ -746,12 +746,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 980b47a2e4a12484eb250b97f132f1b7, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &219989734 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1392729986}
-  m_Script: {fileID: 11500000, guid: 222849e461b75f74b95ce117361534a1, type: 3}
 --- !u!1001 &231674209
 Prefab:
   m_ObjectHideFlags: 0
@@ -3152,17 +3146,17 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 219989734}
+      objectReference: {fileID: 0}
     - target: {fileID: 114195537001946664, guid: bb75f04e2b84648409e5488009e2d091,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 219989734}
+      objectReference: {fileID: 0}
     - target: {fileID: 114115000743261952, guid: bb75f04e2b84648409e5488009e2d091,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 219989734}
+      objectReference: {fileID: 0}
     - target: {fileID: 223862938153269008, guid: bb75f04e2b84648409e5488009e2d091,
         type: 2}
       propertyPath: m_Camera
@@ -4458,91 +4452,76 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
-        type: 2}
-      propertyPath: sManager
-      value: 
-      objectReference: {fileID: 1482451886}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: soundVictory
       value: 
       objectReference: {fileID: 2062546870}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: soundFail
       value: 
       objectReference: {fileID: 782823091}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: ducks
       value: 
       objectReference: {fileID: 2062546865}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: chicken
       value: 
       objectReference: {fileID: 2062546864}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: Results
       value: 
       objectReference: {fileID: 2062546866}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: cascos.Array.data[0]
       value: 
       objectReference: {fileID: 2062546863}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: cascos.Array.data[1]
       value: 
       objectReference: {fileID: 2062546862}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: cascos.Array.data[2]
       value: 
       objectReference: {fileID: 2062546861}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: cascos.Array.data[3]
       value: 
       objectReference: {fileID: 2062546860}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: cascos.Array.data[4]
       value: 
       objectReference: {fileID: 2062546859}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: menubtn
       value: 
       objectReference: {fileID: 1538613763}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: tryagain
       value: 
       objectReference: {fileID: 435065262}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
       propertyPath: next
       value: 
       objectReference: {fileID: 610680498}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
         type: 2}
-      propertyPath: TotalChickens
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
-        type: 2}
-      propertyPath: TotalDucks
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114019023153913754, guid: 7059aab86c9819144a555e3f171fffcc,
-        type: 2}
-      propertyPath: TotalTime
-      value: 120
-      objectReference: {fileID: 0}
+      propertyPath: sManager
+      value: 
+      objectReference: {fileID: 1482451886}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7059aab86c9819144a555e3f171fffcc, type: 2}
   m_IsPrefabParent: 0

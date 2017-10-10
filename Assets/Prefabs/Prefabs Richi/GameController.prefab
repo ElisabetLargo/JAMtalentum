@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalTime: 63
-  TotalChickens: 1
-  TotalDucks: 8
+  TotalChickens: 3
+  TotalDucks: 3
   sManager: {fileID: 0}
   soundVictory: {fileID: 0}
   soundFail: {fileID: 0}
