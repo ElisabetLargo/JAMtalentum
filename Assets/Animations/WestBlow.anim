@@ -18,17 +18,17 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0.06666667
+    - time: 0
       value: {fileID: 21300000, guid: a22fd1ffee4bc8743a1f698f7d342001, type: 3}
-    - time: 0.33333334
+    - time: 0.083333336
       value: {fileID: 21300000, guid: f8042fd3d1929a14ab8e0dba8c773665, type: 3}
-    - time: 0.5
+    - time: 0.25
       value: {fileID: 21300000, guid: 4e3999a1fc762694681a53333f8eee25, type: 3}
-    - time: 0.6666667
+    - time: 0.41666666
       value: {fileID: 21300000, guid: e05cedfed71ba7e499b18e0d3522c178, type: 3}
-    - time: 0.8333333
+    - time: 0.5833333
       value: {fileID: 21300000, guid: c2fbacb3772866542ad455f9069d9def, type: 3}
-    - time: 1
+    - time: 0.75
       value: {fileID: 21300000, guid: f64a184ea42db53439d965081f8596c1, type: 3}
     attribute: m_Sprite
     path: 
@@ -60,7 +60,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.76666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

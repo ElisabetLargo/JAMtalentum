@@ -52,7 +52,7 @@ public class ButtonHandler : MonoBehaviour {
     {
         //eastClick(!activated);
 		Debug.Log(Vector3.right * (activated ? -1 : 1));
-
+		tc.changeWindDirection(-1*Vector3.right * (activated ? -1 : 1));
 		animateBlower (COORDS.WEST, activated);
 
     }

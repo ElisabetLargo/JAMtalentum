@@ -30,7 +30,7 @@ public class Vortex : MonoBehaviour {
 		distanceVector =  this.transform.position-main.position  ;
 
 		string tag = other.transform.root.tag;
-		Debug.Log("Entra en Chicken" + other.name);
+	//	Debug.Log("Entra en Chicken" + other.name);
 		if ( tag== "Duck" || tag == "Chicken")
 		{
 			deviateVelocity (distanceVector, other);

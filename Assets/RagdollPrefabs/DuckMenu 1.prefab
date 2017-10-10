@@ -84,10 +84,9 @@ GameObject:
   - component: {fileID: 95201952729252736}
   - component: {fileID: 54252780442474850}
   - component: {fileID: 114980104221165726}
-  - component: {fileID: 114193430356303536}
   m_Layer: 0
   m_Name: DuckMenu 1
-  m_TagString: Untagged
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,7 +746,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1175877060368910}
   m_LocalRotation: {x: -0, y: -0.9914769, z: -0, w: 0.13028257}
-  m_LocalPosition: {x: -47, y: 0.06112647, z: -20.5}
+  m_LocalPosition: {x: -47, y: 1.52, z: -20.5}
   m_LocalScale: {x: 0.38444752, y: 0.38444725, z: 0.38444746}
   m_Children:
   - {fileID: 4651204697814230}
@@ -1435,18 +1434,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114193430356303536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1175877060368910}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6528454dde01211438f349d0aec074ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ragdollToMecanimBlendTime: 0.5
 --- !u!114 &114980104221165726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1459,7 +1446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centro: {fileID: 54252780442474850}
-  ForceMod: 0.2
+  ForceMod: 0.5
   CollisionForce: 1000
   DuckSpeed: 5
   terrenoLayer:
@@ -2291,7 +2278,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0021064002, y: 0.0022242072, z: -0.009326504}
+  m_ConnectedAnchor: {x: -0.0021064007, y: 0.0022242062, z: -0.009326504}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2333,7 +2320,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000014901161, y: 0.013660267, z: 0.0000000027939682}
+  m_ConnectedAnchor: {x: 0.0000000144355, y: 0.013660267, z: 0.0000000027939682}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2375,7 +2362,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0036523803, y: -0.004492801, z: -0.000091391914}
+  m_ConnectedAnchor: {x: 0.0036523808, y: -0.0044928007, z: -0.000091391914}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2459,7 +2446,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0021077434, y: 0.0021200369, z: 0.011321859}
+  m_ConnectedAnchor: {x: -0.0021077427, y: 0.0021200378, z: 0.011321859}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2543,7 +2530,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.08057437, y: -0.18154596, z: 0.7985962}
+  m_ConnectedAnchor: {x: 0.08057437, y: -0.18154609, z: 0.7985962}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2585,7 +2572,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00023355288, y: 0.009798809, z: 0.009201761}
+  m_ConnectedAnchor: {x: 0.00023355299, y: 0.009798809, z: 0.009201763}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
