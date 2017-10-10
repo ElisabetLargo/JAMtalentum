@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour {
 	public GameObject menubtn,tryagain,next;
 	private int rescuedDucks, rescuedChickens, failedRescues;
 	private float currentTime;
+	private bool end=false;
 
 
 	void Start(){
@@ -36,7 +37,7 @@ public class GameController : MonoBehaviour {
         sManager.UpdateTime(TotalTime - currentTime);
         if (currentTime>=TotalTime )
         {
-            gameOver(false);
+			if(!end) gameOver(false);
         }
         
         if(rescuedChickens + rescuedDucks + failedRescues == TotalDucks + TotalChickens)
@@ -50,7 +51,7 @@ public class GameController : MonoBehaviour {
                 gameOver(true);
             }*/
 
-			gameOver (true);
+			if(!end)gameOver (true);
 
         }
 
@@ -71,7 +72,8 @@ public class GameController : MonoBehaviour {
         failedRescues++;
     }
     public void gameOver(bool win) {
-		
+
+		end = true;
 		ducks.text = rescuedDucks + "/" + TotalDucks;
 		chicken.text = rescuedChickens + "/" + TotalChickens;
 

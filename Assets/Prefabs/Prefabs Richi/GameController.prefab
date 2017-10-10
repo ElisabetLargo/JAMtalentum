@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4389115471685396}
-  - component: {fileID: 114973282237175804}
+  - component: {fileID: 114019023153913754}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114973282237175804
+--- !u!114 &114019023153913754
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,9 +48,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167650119259490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c9c15afd0ae71448d32210264bf82b, type: 3}
+  m_Script: {fileID: 11500000, guid: 222849e461b75f74b95ce117361534a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalTime: 120
-  TotalChickens: 6
-  TotalDucks: 6
+  TotalTime: 63
+  TotalChickens: 1
+  TotalDucks: 8
+  sManager: {fileID: 0}
+  soundVictory: {fileID: 0}
+  soundFail: {fileID: 0}
+  ducks: {fileID: 0}
+  chicken: {fileID: 0}
+  Results: {fileID: 0}
+  cascos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  blackCasco: {fileID: 21300000, guid: d03e7fae4f0010c4eb8eb1ee7e4e6151, type: 3}
+  menubtn: {fileID: 0}
+  tryagain: {fileID: 0}
+  next: {fileID: 0}
