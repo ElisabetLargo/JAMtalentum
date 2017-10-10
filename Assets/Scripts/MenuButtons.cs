@@ -48,7 +48,11 @@ public class MenuButtons : MonoBehaviour {
         StartCoroutine(changeScene(0));
 
     }
+	public void Credits(){
+		fadeOut ();
+		StartCoroutine(changeScene(7));
 
+	}
     void fadeOut(){
 		//fadeOutAnim.SetBool ("Fade", true);
 		anim.Play();

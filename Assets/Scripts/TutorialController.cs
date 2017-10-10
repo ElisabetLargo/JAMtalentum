@@ -125,6 +125,6 @@ public class TutorialController : MonoBehaviour {
 	}
 
 	private void StartGame(){
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (2);
 	}
 }

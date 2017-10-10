@@ -10,21 +10,27 @@ public class ChickenNest : Nest {
     }
     public override void OnTriggerEnter(Collider other)
     {
-		string tag = other.transform.root.tag;
-		Debug.Log("Entra en Chicken" + other.name);
-        if ( tag== "Duck")
-        {
-            Debug.Log("pero es duck");
-            gc.failedRescue();
-			base.OnTriggerEnter(other);
-        }
-        else if (tag == "Chicken")
-        {
-            Debug.Log("y es tag correcto");
-            gc.rescueChicken();
-			base.OnTriggerEnter(other);
-
-        }
+		
+		if(other.transform.root.tag == "Duck")
+		{
+			if (!other.transform.root.GetComponent<Duckling> ().detected) {
+				other.transform.root.GetComponent<Duckling> ().detected = true;
+				Debug.Log ("Entra en Ducknest con tag duck");
+				gc.failedRescue ();
+				base.OnTriggerEnter (other);
+				fail.Play ();
+			}
+		}
+		else if(other.transform.root.tag =="Chicken")
+		{
+			if (!other.transform.root.GetComponent<Duckling> ().detected) {
+				other.transform.root.GetComponent<Duckling> ().detected = true;
+				Debug.Log ("Entra en Ducknest con tag chicken");
+				gc.rescueChicken ();
+				base.OnTriggerEnter (other);
+				win.Play ();
+			}
+		}
         
     }
 }

@@ -23,10 +23,10 @@ public class ScoreManager : MonoBehaviour {
     /// <param name="birdsSaved"></param>
     /// <param name="birdsTotal"></param>
     /// <param name="typeofBird"></param>
-    public void updatebirds(ref int birdsSaved, ref int birdsTotal,bool ducks)
+    public void updatebirds( int birdsSaved,  int birdsTotal,bool ducks)
     {
         Text t;
-        StringBuilder s = new StringBuilder();
+
         string bird;
         if (ducks)
         {
@@ -37,8 +37,7 @@ public class ScoreManager : MonoBehaviour {
             t = ChickensSaved;
         }
 
-        s.Append(birdsSaved + "/" + birdsTotal);
-        t.text = s.ToString();
+		t.text = birdsSaved + "/" + birdsTotal;
     }
 
 }

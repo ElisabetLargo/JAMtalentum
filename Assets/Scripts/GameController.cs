@@ -30,13 +30,16 @@ public class GameController : MonoBehaviour {
 		*/
 		//TotalDucks = TotalChickens=6;
 
-		sManager.updatebirds(ref rescuedChickens, ref TotalChickens, false);
-		sManager.updatebirds(ref rescuedDucks, ref TotalDucks, true);
+		sManager.updatebirds( rescuedChickens,  TotalChickens, false);
+		sManager.updatebirds( rescuedDucks,  TotalDucks, true);
 	}
 
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit();
+		}
         currentTime += Time.deltaTime;
         sManager.UpdateTime(TotalTime - currentTime);
         if (currentTime>=TotalTime )
@@ -44,7 +47,7 @@ public class GameController : MonoBehaviour {
 			if(!end) gameOver(false);
         }
         
-        if(rescuedChickens + rescuedDucks + failedRescues == TotalDucks + TotalChickens)
+        if(rescuedChickens + rescuedDucks + failedRescues >= TotalDucks + TotalChickens)
         {
            /* if(failedRescues / (TotalChickens + TotalDucks)> 0.4f)
             {
@@ -63,13 +66,13 @@ public class GameController : MonoBehaviour {
     public void rescueDuck()
     {
         rescuedDucks++;
-        sManager.updatebirds(ref rescuedDucks, ref TotalDucks, true);
+        sManager.updatebirds(rescuedDucks, TotalDucks, true);
     }
 
     public void rescueChicken()
     {
         rescuedChickens++;
-        sManager.updatebirds(ref rescuedChickens, ref TotalChickens, false);
+        sManager.updatebirds(rescuedChickens, TotalChickens, false);
     }
     public void failedRescue()
     {
@@ -81,10 +84,20 @@ public class GameController : MonoBehaviour {
 		ducks.text = rescuedDucks + "/" + TotalDucks;
 		chicken.text = rescuedChickens + "/" + TotalChickens;
 
-		int duckProp = rescuedDucks / TotalDucks*10;
-		int chickenProp = rescuedChickens / TotalChickens*10;
+		int duckProp;
+		if (TotalDucks == 0)
+			duckProp = 1;
+		
+		else duckProp= rescuedDucks / TotalDucks*10;
 
-		int finalProp = (duckProp + chickenProp) / 2*10;
+		int chickenProp;
+
+		if (TotalChickens == 0)
+			chickenProp = 1;
+		
+		else chickenProp= rescuedChickens / TotalChickens*10;
+
+		int finalProp = (duckProp + chickenProp) / 2*100;
 
 		if(finalProp>=10){
 			cascos [0].sprite = blackCasco;
@@ -126,6 +139,7 @@ public class GameController : MonoBehaviour {
 	}
 	public void Next(){
 		int i = SceneManager.GetActiveScene ().buildIndex;
-		SceneManager.LoadScene (i + 1);
+		if(i!=6) SceneManager.LoadScene (i + 1);
+		else SceneManager.LoadScene (0);
 	}
 }
