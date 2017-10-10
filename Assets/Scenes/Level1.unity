@@ -380,6 +380,8 @@ MonoBehaviour:
   TotalChickens: 0
   TotalDucks: 0
   sManager: {fileID: 470544428}
+  soundVictory: {fileID: 0}
+  soundFail: {fileID: 0}
   ducks: {fileID: 642206354}
   chicken: {fileID: 672497453}
   Results: {fileID: 975332026}

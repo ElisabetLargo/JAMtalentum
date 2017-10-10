@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
     public int TotalTime, TotalChickens, TotalDucks;
     public ScoreManager sManager;
 
+	public AudioSource soundVictory,soundFail;
+
 	public Text ducks,chicken;
 	public GameObject Results;
 	public Image[] cascos;
@@ -88,7 +90,8 @@ public class GameController : MonoBehaviour {
 		if(finalProp>=50){				
 			cascos [2].sprite = blackCasco;
 		}
-		if(finalProp>=70){				
+		if(finalProp>=70){		
+			soundVictory.Play ();
 			cascos [3].sprite = blackCasco;
 			next.SetActive (true);
 		}
@@ -99,6 +102,12 @@ public class GameController : MonoBehaviour {
 		Results.SetActive (true);
 		tryagain.SetActive (true);
 		menubtn.SetActive (true);
+
+		if (finalProp < 70) {
+			soundFail.Play ();
+
+		}		
+			
 
     }
 
