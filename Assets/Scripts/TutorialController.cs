@@ -16,12 +16,14 @@ public class TutorialController : MonoBehaviour {
 	public GameObject textBox;
 	public GameObject compass;
 
+
 	private int index=0;
 	private int waitingIndex=0;
 	private int lastWaiter=0;
 
 	private Image img;
 	private bool end=false;
+	public GameObject duck;
 
 	// Use this for initialization
 	void Start () {
@@ -68,6 +70,7 @@ public class TutorialController : MonoBehaviour {
 		compass.SetActive (true);
 		textBox.SetActive (false);
 		talkers[index-1].SetActive(false);
+		duck.SetActive (true);
 
 		Invoke ("Waiting", 5f);
 		//Spawn pollito y gallinita
@@ -110,13 +113,15 @@ public class TutorialController : MonoBehaviour {
 
 
 	public void Win(){
+		end = true;
 		textBox.SetActive (true);
 		textBox.GetComponentInChildren<Text> ().text = "GREAT! You can start now!";
+		Invoke ("StartGame", 3f);
 
 	
 	}
 
 	private void StartGame(){
-		SceneManager.LoadScene (1);
+		SceneManager.LoadScene (0);
 	}
 }

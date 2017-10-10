@@ -11,6 +11,7 @@ public class ChickenNest : Nest {
     public override void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entra en Chicken");
+		Debug.Log ("tag es " + other.gameObject.name);
         if (other.tag == "Duck")
         {
             Debug.Log("es duck");
@@ -24,9 +25,12 @@ public class ChickenNest : Nest {
             base.OnTriggerEnter(other);
 
         }
-		else if(other.tag=="DuckTutorial"){
+		else if(other.tag=="TutoDuck"){
+			Debug.Log("tag tuto");
 
 			GameObject.FindGameObjectWithTag("Canvas").GetComponent<TutorialController>().Win();
+			base.OnTriggerEnter(other);
+
 		}
         
     }
