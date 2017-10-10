@@ -204,7 +204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4478393871149712, guid: c850c0e2009af004e9bbf9e2ecf4bc77, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -23.88
+      value: -26.01
       objectReference: {fileID: 0}
     - target: {fileID: 4478393871149712, guid: c850c0e2009af004e9bbf9e2ecf4bc77, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1213,6 +1213,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029240303122776, guid: f1219695fe8597248b4e9cbbd4094ae4, type: 2}
+      propertyPath: m_TagString
+      value: TutoDuck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1219695fe8597248b4e9cbbd4094ae4, type: 2}
