@@ -20,7 +20,10 @@ public class TerrainController : MonoBehaviour {
         Ducks.AddRange(GameObject.FindGameObjectsWithTag("Duck"));
         Ducks.AddRange(GameObject.FindGameObjectsWithTag("Chicken"));
     }
-
+	void Awake(){
+		StopAllCoroutines ();
+		Wind = Vector3.zero;
+	}
     void Update()
     {
       //  var rt = compass.GetComponent<RectTransform>();
