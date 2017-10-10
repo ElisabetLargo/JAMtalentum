@@ -16,6 +16,8 @@ public class TutorialController : MonoBehaviour {
 	public GameObject textBox;
 	public GameObject compass;
 
+	public AudioSource sound;
+
 
 	private int index=0;
 	private int waitingIndex=0;
@@ -116,6 +118,7 @@ public class TutorialController : MonoBehaviour {
 		end = true;
 		textBox.SetActive (true);
 		textBox.GetComponentInChildren<Text> ().text = "GREAT! You can start now!";
+		sound.Play ();
 		Invoke ("StartGame", 5f);
 
 	

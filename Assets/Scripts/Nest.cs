@@ -9,7 +9,6 @@ public class Nest : MonoBehaviour {
 
    public virtual void Start()
     {
-        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         tc = GameObject.FindGameObjectWithTag("Terrain").GetComponent<TerrainController>();
 
     }
