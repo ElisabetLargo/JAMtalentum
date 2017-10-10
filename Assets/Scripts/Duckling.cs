@@ -11,6 +11,8 @@ public class Duckling : MonoBehaviour {
     public float ForceMod =0.2f;
 	public float CollisionForce = 1000f;
 	public float DuckSpeed=50;
+
+	public AudioSource choque;
 	public LayerMask terrenoLayer;
     [Range(0,10)]
     public float animMultiplyier;

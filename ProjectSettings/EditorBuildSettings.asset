@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SurvivalScene.unity
     guid: b8e4bdb891456d24ba9ac9f6b4a1549e
+  - enabled: 1
+    path: Assets/Scenes/CREDITOS BUENO.unity
+    guid: c29d564a5d4dcd64793104ba3deaa63c
