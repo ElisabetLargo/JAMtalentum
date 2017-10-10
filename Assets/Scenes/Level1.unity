@@ -380,8 +380,8 @@ MonoBehaviour:
   TotalChickens: 0
   TotalDucks: 0
   sManager: {fileID: 470544428}
-  soundVictory: {fileID: 0}
-  soundFail: {fileID: 0}
+  soundVictory: {fileID: 1960192820}
+  soundFail: {fileID: 1960192820}
   ducks: {fileID: 642206354}
   chicken: {fileID: 672497453}
   Results: {fileID: 975332026}
@@ -1080,6 +1080,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21bb189b42bde044fbc9be0fa158f0c4, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1960192820 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82856450365674608, guid: 21bb189b42bde044fbc9be0fa158f0c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1960192819}
 --- !u!1 &1974660435
 GameObject:
   m_ObjectHideFlags: 0

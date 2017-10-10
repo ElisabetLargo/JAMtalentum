@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -735,39 +735,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb8ee4e53f5e47840a4bf22ac9dfd755, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &413233766 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1167650119259490, guid: 7059aab86c9819144a555e3f171fffcc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1392729986}
---- !u!114 &413233767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 413233766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 222849e461b75f74b95ce117361534a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TotalTime: 63
-  TotalChickens: 1
-  TotalDucks: 8
-  sManager: {fileID: 1482451886}
-  ducks: {fileID: 2062546865}
-  chicken: {fileID: 2062546864}
-  Results: {fileID: 2062546866}
-  cascos:
-  - {fileID: 2062546863}
-  - {fileID: 2062546862}
-  - {fileID: 2062546861}
-  - {fileID: 2062546860}
-  - {fileID: 2062546859}
-  blackCasco: {fileID: 21300000, guid: d03e7fae4f0010c4eb8eb1ee7e4e6151, type: 3}
-  menubtn: {fileID: 1538613763}
-  tryagain: {fileID: 435065262}
-  next: {fileID: 610680498}
 --- !u!1 &435065262 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1650609695822768, guid: bb75f04e2b84648409e5488009e2d091,
@@ -1568,31 +1535,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1779189434}
-    - target: {fileID: 114829524077502140, guid: bb75f04e2b84648409e5488009e2d091,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.9558824
-      objectReference: {fileID: 0}
-    - target: {fileID: 114829524077502140, guid: bb75f04e2b84648409e5488009e2d091,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.9558824
-      objectReference: {fileID: 0}
-    - target: {fileID: 114829524077502140, guid: bb75f04e2b84648409e5488009e2d091,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.9558824
-      objectReference: {fileID: 0}
-    - target: {fileID: 114829524077502140, guid: bb75f04e2b84648409e5488009e2d091,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 114829524077502140, guid: bb75f04e2b84648409e5488009e2d091,
-        type: 2}
-      propertyPath: m_FontData.m_MaxSize
-      value: 70
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb75f04e2b84648409e5488009e2d091, type: 2}
   m_IsPrefabParent: 0
@@ -1866,6 +1808,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 980b47a2e4a12484eb250b97f132f1b7, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1296186826 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82129408281715002, guid: bb75f04e2b84648409e5488009e2d091,
+    type: 2}
+  m_PrefabInternal: {fileID: 867045796}
 --- !u!1001 &1355788536
 Prefab:
   m_ObjectHideFlags: 0
@@ -2013,8 +1960,77 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114973282237175804, guid: 7059aab86c9819144a555e3f171fffcc, type: 2}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: sManager
+      value: 
+      objectReference: {fileID: 1482451886}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: soundVictory
+      value: 
+      objectReference: {fileID: 2062546868}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: soundFail
+      value: 
+      objectReference: {fileID: 1296186826}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: ducks
+      value: 
+      objectReference: {fileID: 2062546865}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: chicken
+      value: 
+      objectReference: {fileID: 2062546864}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: Results
+      value: 
+      objectReference: {fileID: 2062546866}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: cascos.Array.data[0]
+      value: 
+      objectReference: {fileID: 2062546863}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: cascos.Array.data[1]
+      value: 
+      objectReference: {fileID: 2062546862}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: cascos.Array.data[2]
+      value: 
+      objectReference: {fileID: 2062546861}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: cascos.Array.data[3]
+      value: 
+      objectReference: {fileID: 2062546860}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: cascos.Array.data[4]
+      value: 
+      objectReference: {fileID: 2062546859}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: menubtn
+      value: 
+      objectReference: {fileID: 1538613763}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: tryagain
+      value: 
+      objectReference: {fileID: 435065262}
+    - target: {fileID: 114309812222399618, guid: 7059aab86c9819144a555e3f171fffcc,
+        type: 2}
+      propertyPath: next
+      value: 
+      objectReference: {fileID: 610680498}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7059aab86c9819144a555e3f171fffcc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1410010165
@@ -3045,5 +3061,10 @@ MonoBehaviour:
 --- !u!1 &2062546866 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1899332170821394, guid: bb75f04e2b84648409e5488009e2d091,
+    type: 2}
+  m_PrefabInternal: {fileID: 867045796}
+--- !u!82 &2062546868 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82308933894795778, guid: bb75f04e2b84648409e5488009e2d091,
     type: 2}
   m_PrefabInternal: {fileID: 867045796}
