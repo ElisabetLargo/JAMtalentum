@@ -10,9 +10,11 @@ public class Vortex : MonoBehaviour {
 	public float gravityForce;
 	public void OnTriggerEnter(Collider other)
 	{
+		InvokeRepeating ("spawnVortex", 5f, 10f);
 		Transform main = other.transform.root;
 		distanceVector =this.transform.position-main.position  ;
 		initialDistance = distanceVector.magnitude;
+
 
 		string tag = other.transform.root.tag;
 		Debug.Log("Entra en Chicken" + other.name);
@@ -41,5 +43,24 @@ public class Vortex : MonoBehaviour {
 		float close = distanceVector.magnitude;
 		rb.velocity += (close / initialDistance)*gravityForce * distanceVector.normalized;
 
+	}
+
+	public void spawnVortex(){
+
+		this.GetComponent<MeshRenderer> ().enabled = true;
+		var a = this.GetComponentsInChildren<SpriteRenderer> ();
+		foreach (var rend  in a) {
+			rend.enabled = true;
+		}
+		gravityForce = 9.8f;
+		Invoke ("despawnVortex", 5);
+	}
+	public void despawnVortex(){
+		this.GetComponent<MeshRenderer> ().enabled = false;
+		var a = this.GetComponentsInChildren<SpriteRenderer> ();
+		foreach (var rend  in a) {
+			rend.enabled = false;
+		}
+		gravityForce = 0;
 	}
 }
