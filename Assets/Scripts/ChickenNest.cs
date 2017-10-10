@@ -10,18 +10,19 @@ public class ChickenNest : Nest {
     }
     public override void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entra en Chicken");
-        if (other.tag == "Duck")
+		string tag = other.transform.root.tag;
+		Debug.Log("Entra en Chicken" + other.name);
+        if ( tag== "Duck")
         {
-            Debug.Log("es duck");
+            Debug.Log("pero es duck");
             gc.failedRescue();
-            base.OnTriggerEnter(other);
+			base.OnTriggerEnter(other);
         }
-        else if (other.tag == "Chicken")
+        else if (tag == "Chicken")
         {
-            Debug.Log("tag correcto");
+            Debug.Log("y es tag correcto");
             gc.rescueChicken();
-            base.OnTriggerEnter(other);
+			base.OnTriggerEnter(other);
 
         }
         

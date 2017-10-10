@@ -24,7 +24,7 @@ public class ButtonHandler : MonoBehaviour {
 	
     void northClick(bool activated)
     {
-        Debug.Log(Vector3.forward * (activated ? -1 : 1));
+//        Debug.Log(Vector3.forward * (activated ? -1 : 1));
         tc.changeWindDirection(Vector3.forward * (activated?-1:1));
        
     }
@@ -34,8 +34,7 @@ public class ButtonHandler : MonoBehaviour {
     }
     void eastClick(bool activated)
     {
-        Debug.Log(Vector3.right * (activated ? -1 : 1));
-        tc.changeWindDirection(Vector3.right * (activated ? -1 : 1));
+		tc.changeWindDirection(Vector3.right * (activated ? -1 : 1));
 
     }
     void westClick(bool activated)

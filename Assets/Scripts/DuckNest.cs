@@ -10,16 +10,19 @@ public class DuckNest : Nest {
     }
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
-        if(other.tag == "Duck")
+       // Debug.Log(other.tag);
+		if(other.transform.root.tag == "Duck")
         {
+			Debug.Log ("Entra en Ducknest con tag duck");
             gc.rescueDuck();
-            Destroy(other.gameObject);
+			base.OnTriggerEnter(other);
         }
-        else if(other.tag =="Chicken")
+        else if(other.transform.root.tag =="Chicken")
         {
+
+			Debug.Log ("Entra en Ducknest con tag chicken");
             gc.failedRescue();
-            Destroy(other.gameObject);
+			base.OnTriggerEnter(other);
         }
     }
     

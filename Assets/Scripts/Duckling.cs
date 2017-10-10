@@ -11,6 +11,7 @@ public class Duckling : MonoBehaviour {
     public float ForceMod =0.2f;
 	public float CollisionForce = 1000f;
 	public float DuckSpeed=50;
+	public LayerMask terrenoLayer;
     [Range(0,10)]
     public float animMultiplyier;
     float duckRotationspeed;
@@ -24,7 +25,8 @@ public class Duckling : MonoBehaviour {
     private float w, h, randomMovementTime;
 
 	private bool isRandomMovement = true;
-
+	[HideInInspector]
+	public List<Rigidbody> rbList;
 
 	private Rigidbody duckRb;
     public Animator ducklingAnimator;
@@ -45,6 +47,10 @@ public class Duckling : MonoBehaviour {
         }
 
 		duckRb = centro;
+		rbList = new List<Rigidbody> ();
+		rbList.AddRange (this.GetComponents<Rigidbody> ());
+		var rb = this.GetComponent<BoxCollider> ();
+
 		direction = this.transform.forward;
         ducklingAnimator = this.GetComponent<Animator>();
 	}
@@ -65,9 +71,6 @@ public class Duckling : MonoBehaviour {
         float speed = duckRb.velocity.magnitude / DuckSpeed * animMultiplyier;
         if (TerrainController.Wind == Vector3.zero)
         {
-			
-		
-
             ducklingAnimator.SetFloat("AnimationSpeedMultiplier", speed);
             
         }
@@ -88,8 +91,8 @@ public class Duckling : MonoBehaviour {
 
         LBC = terrain.transform.position- new Vector3(terrain.transform.localScale.x,0, terrain.transform.localScale.z) * 5;
 
-        w = terrain.transform.localScale.x*10f;
-        h = terrain.transform.localScale.z*10f;
+		w = terrain.transform.localScale.x*10f;
+			h = terrain.transform.localScale.z*10f;
 
 
         p = new Vector3((p.x -LBC.x)/w, p.y ,(p.z-LBC.z)/h);

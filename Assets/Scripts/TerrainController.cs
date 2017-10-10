@@ -49,7 +49,7 @@ public class TerrainController : MonoBehaviour {
             Wind = Vector3.zero;
             randomMovement = true;
         }
-        Debug.Log("setting random movement a " + randomMovement);
+    //    Debug.Log("setting random movement a " + randomMovement);
         for (int i = 0; i < Ducks.Count; i++)
         {
             if (Ducks[i])

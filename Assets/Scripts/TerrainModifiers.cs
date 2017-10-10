@@ -20,10 +20,10 @@ public class TerrainModifiers : MonoBehaviour {
         switch (terrainType)
         {
             case TypeOfTerrain.ICE:
-                modifier = 0f;
+                modifier = -5f;
                 break;
             case TypeOfTerrain.MUD:
-                modifier = 0.9f;
+                modifier = 0.8f;
                 break;
 			case TypeOfTerrain.FLOWERS:
 				modifier = 0.7f;
@@ -42,19 +42,23 @@ public class TerrainModifiers : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-        
-		if (duckOrchicken(col.tag, "Chicken", "Duck")) {
+		//Debug.Log (col.name +"  " + col.transform.root.name);
+		if (duckOrchicken(col.transform.root.tag, "Chicken", "Duck") ) {
+			
+			col.transform.root.GetComponent<Duckling>().ForceMod=modifier;
 
-			col.gameObject.GetComponent<Duckling>().ForceMod=modifier;
-			Debug.Log ("ha pasado");
+//			Debug.Log ("ha pasado "+col.transform.root.name);
 		}
 	}
 
 	void OnTriggerExit(Collider col){
-		if (duckOrchicken(col.tag, "Chicken", "Duck")) {
-
-			col.gameObject.GetComponent<Duckling>().ForceMod=0.2f;
-			Debug.Log ("ha salido");
+		if (duckOrchicken(col.transform.root.tag, "Chicken", "Duck")) {
+			if (terrainType == TypeOfTerrain.ICE) {
+				col.transform.root.GetComponent<Duckling> ().ForceMod = 0.2f;
+			} else {
+				col.transform.root.GetComponent<Duckling> ().ForceMod = 0.5f;
+			}
+		//	Debug.Log ("ha salido");
 		}
 	}
 		

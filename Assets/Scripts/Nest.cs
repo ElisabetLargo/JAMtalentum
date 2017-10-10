@@ -21,7 +21,7 @@ public class Nest : MonoBehaviour {
     public virtual void OnTriggerEnter(Collider other)
     {
         Debug.Log("borrando...");
-        removechicken(other.gameObject);
+		removechicken(other.transform.root.gameObject);
     }
     
 }
