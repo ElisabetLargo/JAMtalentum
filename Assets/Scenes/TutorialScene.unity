@@ -675,7 +675,7 @@ RectTransform:
   m_GameObject: {fileID: 684465392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1535848, y: 1.1535848, z: 1.1535848}
   m_Children:
   - {fileID: 1660756823}
   m_Father: {fileID: 1282061018}
@@ -683,7 +683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: -358}
+  m_AnchoredPosition: {x: -146, y: -358}
   m_SizeDelta: {x: 1336, y: 295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684465394
@@ -698,14 +698,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.88675356, g: 0.9338235, b: 0.4463127, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 315e64c336f35c74bbf92142fce7a4ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1652,10 +1652,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phrases:
-  - "Bienvenido becario! Nosotros somos los se\xF1ores del viento "
-  - 'Cada uno soplamos hacia un punto cardinal '
-  - 'Ayuda al pato a llegar a su nido convenientemente colocado '
-  - 'Para ello indica cual de nosotros debe soplar '
+  - 'Nordri: Welcome scholar!We are the almighty lords of the wind.'
+  - 'Surdri: Each of us modify the direction of the wind along one cardinal point. '
+  - 'Austri: Your duty as a VikingGolf player is to make the stray ducks and chickens
+    land in their nests. '
+  - 'Vestri: For this purpose, you must point out whom of us must blow. '
   waitingPhrases:
   - Helloooo
   - We are waiting...
@@ -1918,8 +1919,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1209, y: 195}
+  m_AnchoredPosition: {x: -6, y: -11}
+  m_SizeDelta: {x: 1048, y: 142}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660756824
 MonoBehaviour:
@@ -1941,8 +1942,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 74
+    m_Font: {fileID: 12800000, guid: 4d38628fb38ed864f9d739971e8a46ff, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1953,9 +1954,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: 
 --- !u!222 &1660756825
 CanvasRenderer:
   m_ObjectHideFlags: 0

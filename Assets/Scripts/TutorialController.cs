@@ -46,12 +46,12 @@ public class TutorialController : MonoBehaviour {
 		index++;
 
 		if (index == phrases.Length) {
-			Invoke ("EnableCompass", 3f);
+			Invoke ("EnableCompass", 5f);
 
 		} else if (index > phrases.Length) {
 			return;
 		} else {
-			Invoke ("changePhrase", 3f);
+			Invoke ("changePhrase", 5f);
 		}
 	}
 
@@ -72,7 +72,7 @@ public class TutorialController : MonoBehaviour {
 		talkers[index-1].SetActive(false);
 		duck.SetActive (true);
 
-		Invoke ("Waiting", 5f);
+		Invoke ("Waiting", 7f);
 		//Spawn pollito y gallinita
 
 	}
@@ -103,7 +103,7 @@ public class TutorialController : MonoBehaviour {
 
 		talkers[lastWaiter].SetActive(false);
 
-		Invoke ("Waiting", 3f);
+		Invoke ("Waiting", 5f);
 
 	}
 
@@ -116,7 +116,7 @@ public class TutorialController : MonoBehaviour {
 		end = true;
 		textBox.SetActive (true);
 		textBox.GetComponentInChildren<Text> ().text = "GREAT! You can start now!";
-		Invoke ("StartGame", 3f);
+		Invoke ("StartGame", 5f);
 
 	
 	}
